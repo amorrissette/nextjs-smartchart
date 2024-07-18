@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useState } from 'react';
 import Dropzone from '../components/Dropzone';
+import Examples from '../components/Examples';
 import DataTable from '../components/Datatable';
 import DataChart from '../components/Datachart';
 
@@ -29,12 +30,13 @@ export default function Home() {
       <p className="flex w-full items-center justify-center font-mono text-2xl pt-4">
         SmartChart : Instant AI-generated insights and visualizations from your csv data
       </p>
-      <p className=" w-full items-center justify-center font-mono text-lg pb-2">
+      <p className="flex w-full items-center justify-center font-mono text-lg pb-2">
         Import a csv document below and SmartChart will analyze the data, identify important insights, and provide a visualization and summary of the findings.
       </p>
       <div className="pt-8">
         {!csvData && <Dropzone onCsvData={setCsvData} />}
         {csvData && <DataChart csvData={csvData} />}
+        {!csvData && <Examples onCsvData={setCsvData} />}
       </div>
 
       <div className="w-full pt-8">
