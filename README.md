@@ -18,7 +18,7 @@ Currently built using [Next.js](https://nextjs.org/), [OpenAI](https://sdk.verce
 
 * Simple UI to drag-and-drop or select csv files from local computer
 * Dynamically render table based on provided data
-* Vercel AI SDK (currently w/ OpenAI `gpt-4-turbo`) to analyze csv data and "identify insights" using [generate structured output](https://sdk.vercel.ai/docs/ai-sdk-core/generating-structured-data) based on prompt + csv data
+* Vercel AI SDK (currently w/ OpenAI `gpt-4o-mini`) to analyze csv data and "identify insights" using [generate structured output](https://sdk.vercel.ai/docs/ai-sdk-core/generating-structured-data) based on prompt + csv data
 * Creating chart with summary of analysis insights based on structured response
 
 ## To-Do:
