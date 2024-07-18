@@ -17,6 +17,9 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from '@/components/ui/chart';
+import { 
+  Progress 
+} from "@/components/ui/progress";
 
 // type ChartConfig = {
 //     [key: string]: {
@@ -35,7 +38,8 @@ export default function DataChart({ csvData }: { csvData: string }) {
     const [chartConfig, setChartConfig] = useState<ChartConfig>({});
     const [xAxis, setXAxis] = useState<string>('');
     const [loading, setLoading] = useState(true);
-  
+    const [progress, setProgress] = React.useState(10)
+
     useEffect(() => {
       async function fetchInsight() {
         try {
@@ -94,10 +98,24 @@ export default function DataChart({ csvData }: { csvData: string }) {
         fetchInsight();
       }
 
+      // Example to simulate progress increase
+      const timer = setInterval(() => {
+        setProgress((prevProgress) => (prevProgress >= 100 ? 100 : prevProgress * 0.95 + 5));
+      }, 500);
+  
+      return () => {
+        clearInterval(timer);
+      };
+
     }, [csvData]);
   
     if (loading) {
-      return <div className="flex w-full items-center gap-2 text-lg">Analyzing data...</div>;
+      return (
+        <div className="flex w-full items-center gap-2 pt-6 pb-6 text-lg">
+          <div>Analyzing data...</div>
+          <Progress value={progress} className="w-[50%]" />
+        </div>
+      );
     }
   
     return (

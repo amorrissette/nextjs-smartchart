@@ -8,7 +8,7 @@ SmartChart is a basic proof-of-concept AI app that can analyze data and generate
 
 Currently built using [Next.js](https://nextjs.org/), [OpenAI](https://sdk.vercel.ai/providers/ai-sdk-providers/openai), and deployed on [Vercel](https://vercel.com/docs).
 
-Shadcn/ui is used for easy, clean UI components - including new [Charts](https://ui.shadcn.com/charts) components uses [Recharts](https://recharts.org/en-US/) under the hood. 
+[Shadcn/ui](https://ui.shadcn.com/) is used for easy, clean UI components - including new [Charts](https://ui.shadcn.com/charts) components which uses [Recharts](https://recharts.org/en-US/) under the hood. 
 
 <a>
     <img alt="SmartChart - Instant insights and visualizations from your csv data" src="/public/smartchart.png">

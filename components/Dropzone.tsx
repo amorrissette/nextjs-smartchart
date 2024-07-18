@@ -28,7 +28,7 @@ export default function Dropzone({ onCsvData }: DropzoneProps) {
   const { getRootProps, getInputProps } = useDropzone(dropzoneOptions);
 
   return (
-    <div {...getRootProps({ className: 'dropzone' })} style={{ border: '2px dotted #262626', padding: '40px', textAlign: 'center' }}>
+    <div {...getRootProps({ className: 'dropzone font-mono' })} style={{ border: '2px dotted #262626', padding: '40px', textAlign: 'center' }}>
       <input {...getInputProps()} />
       <p>Drop a CSV file here, or click to select one</p>
     </div>
