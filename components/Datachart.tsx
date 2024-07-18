@@ -58,15 +58,15 @@ export default function DataChart({ csvData }: { csvData: string }) {
             const insightFinding = insight.insights[0].finding;
             const insightDescription = insight.insights[0].description;
             const insightChartTitle = insight.insights[0].chartTitle;
-            const insightChartType = insight.insights[0].chartType;
-            const insightXAxis = insight.insights[0].xAxis;
+            const insightChartType = insight.insights[0].chartType.toLowerCase();
+            const insightXAxis = insight.insights[0].xAxis.toLowerCase();
 
             // Extract keys dynamically from the chartData
             const config: ChartConfig = {};
             if (insightData.length > 0) {
               const keys = Object.keys(insightData[0]);
               keys.forEach((key, index) => {
-                if (key != xAxis) { // Skip xAxis key
+                if (key.toLowerCase() != insightXAxis) { // Skip xAxis key
                   config[key] = {
                     label: key,
                     color: `hsl(var(--chart-${index}))`

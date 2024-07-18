@@ -27,7 +27,7 @@ export async function generateInsight(csvData: string): Promise<
 > {
   try {
     const result = await generateObject({
-      model: openai('gpt-4-turbo'),
+      model: openai('gpt-4o-mini'),
       schema: insightSchema,
       prompt: `Thoroughly analyze the CSV Data included below 
       and determine the most important insight 
@@ -37,7 +37,7 @@ export async function generateInsight(csvData: string): Promise<
       Please break up any dates provided in csv data to separate year, month, day 
       in to separate columns before analyzing as applicable. 
       Additionally provide a chart title, an insight summary header
-      and a very brief description of the finding.
+      and a comprehensive description of the finding.
       Finally include a chartData array such that 
       each data point is an object in an array similar to the example below:
       "chartData": [
