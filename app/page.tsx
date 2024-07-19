@@ -21,7 +21,7 @@ export default function Home() {
           Application powered by &nbsp;
           <code className="font-mono font-bold">Vercel | Next.js | OpenAI </code>
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none pt-8 pb-8">
+        <div className="fixed bottom-0 left-0 flex h-24 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none pt-8 pb-8">
           <a href={"https://github.com/amorrissette/nextjs-smartchart"} target="_blank" rel="noopener noreferrer">
               GitHub
           </a> 
@@ -30,9 +30,9 @@ export default function Home() {
       <p className="flex w-full items-center justify-center font-mono text-2xl pt-4">
         SmartChart : Instant AI-generated insights and visualizations from your csv data
       </p>
-      <p className="flex w-full items-center justify-center font-mono text-lg pb-2">
+      {(!csvData && <p className="flex w-full items-center justify-center font-mono text-lg pt-4 pb-2">
         Import a csv document below and SmartChart will analyze the data, identify important insights, and provide a visualization and summary of the findings.
-      </p>
+      </p>)}
       <div className="pt-8">
         {!csvData && <Dropzone onCsvData={setCsvData} />}
         {csvData && <DataChart csvData={csvData} />}
