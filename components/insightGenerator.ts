@@ -55,9 +55,9 @@ export async function generateInsight(csvData: string): Promise<
     console.log(result.object)
     return { type: 'success', insight: result.object };
   } catch (error) {
-    if (TypeValidationError.isTypeValidationError(error)) {
+    if (error instanceof TypeValidationError) {
       return { type: 'validation-error', value: error.value };
-    } else if (JSONParseError.isJSONParseError(error)) {
+    } else if (error instanceof JSONParseError) {
       return { type: 'parse-error', text: error.text };
     } else {
       return { type: 'unknown-error', error };
